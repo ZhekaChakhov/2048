@@ -1,13 +1,9 @@
 import React from "react";
 
-export const Cell = (
-  {
-    //   props
-  }
-) => {
+export const Cell = ({ value }) => {
   return (
     <div className="Cell">
-      <p>WP</p>
+      <p>{value}</p>
     </div>
   );
 };
