@@ -1,12 +1,16 @@
 import React from "react";
 import "./index.css";
-// import { Success } from "./components/Success";
+import { Board } from "./components/Board";
 // import { Users } from "./components/Users";
 
 function App() {
   const [count, setCount] = React.useState(0);
 
-  return <></>;
+  return (
+    <div className="App">
+      <Board />
+    </div>
+  );
 }
 
 export default App;
