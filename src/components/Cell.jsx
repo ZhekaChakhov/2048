@@ -13,6 +13,7 @@ export const Cell = ({ value }) => {
     else if (+value == 512) return "n-512";
     else if (+value == 1024) return "n-1024";
     else if (+value == 2048) return "n-2048";
+    else return "empty";
   };
 
   return <div className={`Cell ${cellClass(value)}`}>{value}</div>;
