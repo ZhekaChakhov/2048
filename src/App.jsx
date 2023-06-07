@@ -2,7 +2,20 @@ import React from "react";
 import "./index.css";
 import { Board } from "./components/Board";
 import { useKeyPress } from "./components/useKeyPress";
-// import { Users } from "./components/Users";
+
+function getRandom(min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function isFull(arr) {
+	for (let i = 0; i < 4; i++) {
+		for (let j = 0; j < 4; j++) {
+			if (!arr[i][j]) return false;
+		}
+	}
+
+	return true;
+}
 
 function App() {
 	const isArrowLeftPressed = useKeyPress("ArrowLeft");
@@ -33,6 +46,17 @@ function App() {
 					((cells[i][j] = cells[i][j + 1]) && (cells[i][j + 1] = ""));
 			}
 		}
+
+		let i, j;
+
+		while (true) {
+			i = getRandom(0, 4);
+			j = getRandom(0, 4);
+			if (!cells[i][j]) break;
+			if (isFull(cells)) return;
+		}
+
+		cells[i][j] = 2;
 	};
 
 	const pressArrowRight = () => {
@@ -51,6 +75,17 @@ function App() {
 					((cells[i][j] = cells[i][j - 1]) && (cells[i][j - 1] = ""));
 			}
 		}
+
+		let i, j;
+
+		while (true) {
+			i = getRandom(0, 4);
+			j = getRandom(0, 4);
+			if (!cells[i][j]) break;
+			if (isFull(cells)) return;
+		}
+
+		cells[i][j] = 2;
 	};
 
 	const pressArrowUp = () => {
@@ -72,6 +107,17 @@ function App() {
 					((cells[i][j] = cells[i + 1][j]) && (cells[i + 1][j] = ""));
 			}
 		}
+
+		let i, j;
+
+		while (true) {
+			i = getRandom(0, 4);
+			j = getRandom(0, 4);
+			if (!cells[i][j]) break;
+			if (isFull(cells)) return;
+		}
+
+		cells[i][j] = 2;
 	};
 
 	const pressArrowDown = () => {
@@ -93,6 +139,17 @@ function App() {
 					((cells[i][j] = cells[i - 1][j]) && (cells[i - 1][j] = ""));
 			}
 		}
+
+		let i, j;
+
+		while (true) {
+			i = getRandom(0, 4);
+			j = getRandom(0, 4);
+			if (!cells[i][j]) break;
+			if (isFull(cells)) return;
+		}
+
+		cells[i][j] = 2;
 	};
 
 	isArrowLeftPressed && pressArrowLeft();
