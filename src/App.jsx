@@ -82,6 +82,7 @@ function App() {
 					cells[i][j - 1] = +cells[i][j - 1] + +cells[i][j];
 					cells[i][j] = "";
 					j--;
+					if (+cells[i][j] == 2048) setWin(true);
 				}
 			}
 
@@ -98,8 +99,6 @@ function App() {
 
 				cells[i][j] ||
 					((cells[i][j] = cells[i][j + 1]) && (cells[i][j + 1] = ""));
-
-				if (+cells[i][j] == 2048) setWin(true);
 			}
 		}
 
@@ -136,6 +135,7 @@ function App() {
 					cells[i][j + 1] = +cells[i][j + 1] + +cells[i][j];
 					cells[i][j] = "";
 					j++;
+					if (+cells[i][j] == 2048) setWin(true);
 				}
 			}
 
@@ -151,8 +151,6 @@ function App() {
 
 				cells[i][j] ||
 					((cells[i][j] = cells[i][j - 1]) && (cells[i][j - 1] = ""));
-
-				if (+cells[i][j] == 2048) setWin(true);
 			}
 		}
 
@@ -192,6 +190,7 @@ function App() {
 					cells[i - 1][j] = +cells[i - 1][j] + +cells[i][j];
 					cells[i][j] = "";
 					i--;
+					if (+cells[i][j] == 2048) setWin(true);
 				}
 			}
 
@@ -210,8 +209,6 @@ function App() {
 				i + 1 > 3 ||
 					cells[i][j] ||
 					((cells[i][j] = cells[i + 1][j]) && (cells[i + 1][j] = ""));
-
-				if (+cells[i][j] == 2048) setWin(true);
 			}
 		}
 
@@ -251,6 +248,7 @@ function App() {
 					cells[i + 1][j] = +cells[i + 1][j] + +cells[i][j];
 					cells[i][j] = "";
 					i++;
+					if (+cells[i][j] == 2048) setWin(true);
 				}
 			}
 
@@ -269,8 +267,6 @@ function App() {
 				i - 1 < 0 ||
 					cells[i][j] ||
 					((cells[i][j] = cells[i - 1][j]) && (cells[i - 1][j] = ""));
-
-				if (+cells[i][j] == 2048) setWin(true);
 			}
 		}
 
