@@ -22,8 +22,8 @@ function isFull(arr) {
 
 // проверка на окончание игры
 function isGameOver(arr, res) {
-	if (!isFull) return false;
 	if (res) return true;
+	if (!isFull) return false;
 
 	for (let i = 0; i < 4; i++) {
 		for (let j = 0; j < 3; j++) {
